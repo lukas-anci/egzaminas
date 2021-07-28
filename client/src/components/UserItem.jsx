@@ -23,10 +23,10 @@ class UserItem extends Component {
           <React.Fragment>
             <div className="card m-2">
               <div className="card-body">
-                <h5 className="card-title">{u.name}</h5>
-                <p className="card-text">{u.age}</p>
-                <p className="card-text">{u.email}</p>
-                <p className="card-text">{u.password}</p>
+                <h5 className="card-title">Vardas: {u.name}</h5>
+                <p className="card-text">Amžius: {u.age}</p>
+                <p className="card-text">El. paštas: {u.email}</p>
+                <p className="card-text">Slaptažodis: {u.password}</p>
               </div>
               <div className="card-footer">
                 <button onClick={this.handleEdit} className="btn btn-success">
