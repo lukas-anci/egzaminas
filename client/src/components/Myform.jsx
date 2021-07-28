@@ -18,11 +18,21 @@ class MyForm extends Component {
       email,
       password,
     };
-    this.props.onCreateNewUser(dataToCreate);
+    const success = this.props.onCreateNewUser(dataToCreate);
+    if (success) this.clearInputs();
   };
 
   handleInput = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+  };
+
+  clearInputs = () => {
+    this.setState({
+      name: '',
+      age: '',
+      email: '',
+      password: '',
+    });
   };
 
   render() {
