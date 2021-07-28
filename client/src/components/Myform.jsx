@@ -9,8 +9,16 @@ class MyForm extends Component {
   };
 
   handleSubmitLocal = (e) => {
+    const { name, age, email, password } = this.state;
     e.preventDefault();
     console.log('stoppp');
+    const dataToCreate = {
+      name,
+      age,
+      email,
+      password,
+    };
+    this.props.onCreateNewUser(dataToCreate);
   };
 
   handleInput = (e) => {
