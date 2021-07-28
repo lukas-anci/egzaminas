@@ -35,6 +35,8 @@ class App extends Component {
       const allUsers = await axios.get('http://localhost:4000/api/user');
       if (Array.isArray(allUsers.data) && allUsers.data.length) {
         this.setState({ users: allUsers.data });
+      } else {
+        this.setState({ users: [] });
       }
     } catch (err) {
       console.warn(err);
