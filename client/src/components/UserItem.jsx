@@ -13,7 +13,12 @@ class UserItem extends Component {
         </div>
         <div className="card-footer">
           <button className="btn btn-success">Redaguoti</button>
-          <button className="btn btn-danger">Ištrinti</button>
+          <button
+            onClick={() => this.props.onDelete(u._id)}
+            className="btn btn-danger"
+          >
+            Ištrinti
+          </button>
         </div>
       </div>
     );

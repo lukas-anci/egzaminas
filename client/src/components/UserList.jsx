@@ -6,7 +6,7 @@ class UserList extends Component {
     return (
       <div className="d-flex flex-wrap">
         {this.props.users.map((u) => (
-          <UserItem key={u._id} user={u} />
+          <UserItem onDelete={this.props.onDelete} key={u._id} user={u} />
         ))}
       </div>
     );

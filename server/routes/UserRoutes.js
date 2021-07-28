@@ -29,7 +29,7 @@ router.get('/api/user', async (req, res) => {
 
 // delete User
 
-router.delete('api/user/:id', async (req, res) => {
+router.delete('/api/user/delete/:id', async (req, res) => {
   try {
     const deleteUser = await UserModel.findByIdAndDelete(req.params.id);
     res.json(deleteUser);
