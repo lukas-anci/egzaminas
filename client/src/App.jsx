@@ -22,6 +22,7 @@ class App extends Component {
         'http://localhost:4000/api/user/new',
         dataToCreate
       );
+      console.log('result', result);
       this.getAllUsers();
 
       return dataToCreate.data ? true : false;
