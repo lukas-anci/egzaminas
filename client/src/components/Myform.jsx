@@ -65,7 +65,7 @@ class MyForm extends Component {
             <input
               value={s.password}
               onChange={this.handleInput}
-              type="text"
+              type="password"
               className="form-control"
               name="password"
               placeholder="Slaptažodis"
