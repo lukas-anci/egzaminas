@@ -23,4 +23,9 @@ mongoose
   })
   .catch((err) => console.error(err.message));
 
+// routes
+
+const userRoutes = require('./server/routes/UserRoutes');
+app.use('/', userRoutes);
+
 app.listen(PORT, console.log(`Server is running on port ${PORT}`));
