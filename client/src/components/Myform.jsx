@@ -8,6 +8,14 @@ class MyForm extends Component {
     password: '',
   };
 
+  componentDidMount() {
+    this.props.place && this.propsToState();
+  }
+
+  propsToState() {
+    const { name, age, email, password } = this.props.user;
+    this.setState({ name, age, email, password });
+  }
   handleSubmitLocal = (e) => {
     const { name, age, email, password } = this.state;
     e.preventDefault();
@@ -18,6 +26,12 @@ class MyForm extends Component {
       email,
       password,
     };
+
+    if (this.props.user) {
+      this.props.onEdit(dataToCreate);
+      return;
+    }
+
     const success = this.props.onCreateNewUser(dataToCreate);
     if (success) this.clearInputs();
   };
@@ -82,7 +96,9 @@ class MyForm extends Component {
               placeholder="Slaptažodis"
             />
           </div>
-          <button className="btn btn-primary my-4">Sukurti</button>
+          <button className="btn btn-primary my-4">
+            {this.props.user ? 'Išsaugoti' : 'Sukurti'}
+          </button>
         </form>
       </div>
     );

@@ -57,7 +57,16 @@ class App extends Component {
   };
 
   editUser = async (id, updatedData) => {
-    console.log('updatedData', updatedData);
+    console.log('updatedData', id, updatedData);
+    try {
+      const updatedResult = await axios.put(
+        'http://localhost:4000/api/user/edit/' + id,
+        updatedData
+      );
+      if (updatedResult.data) this.getAllUsers();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   render() {

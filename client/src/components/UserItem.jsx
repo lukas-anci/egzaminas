@@ -8,7 +8,8 @@ class UserItem extends Component {
     };
   }
 
-  handleEdit = () => {
+  handleEdit = (editData) => {
+    this.state.isEditOn && this.props.onEdit(this.props.user._id, editData);
     this.setState({ isEditOn: !this.state.isEditOn });
   };
 
@@ -17,7 +18,7 @@ class UserItem extends Component {
     return (
       <div className=" form-container">
         {this.state.isEditOn ? (
-          <MyForm user={u} />
+          <MyForm user={u} onEdit={this.handleEdit} />
         ) : (
           <React.Fragment>
             <div className="card m-2">
