@@ -56,12 +56,20 @@ class App extends Component {
     }
   };
 
+  editUser = async (id, updatedData) => {
+    console.log('updatedData', updatedData);
+  };
+
   render() {
     return (
       <div className="App">
         <div className="container">
           <MyForm onCreateNewUser={this.createNewUser} />
-          <UserList onDelete={this.deleteUser} users={this.state.users} />
+          <UserList
+            onEdit={this.editUser}
+            onDelete={this.deleteUser}
+            users={this.state.users}
+          />
         </div>
       </div>
     );
