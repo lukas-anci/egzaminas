@@ -4,7 +4,7 @@ class UserList extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div className="d-flex flex-wrap">
         {this.props.users.map((u) => (
           <UserItem key={u._id} user={u} />
         ))}

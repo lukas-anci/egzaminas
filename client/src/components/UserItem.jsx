@@ -2,7 +2,21 @@ import React, { Component } from 'react';
 class UserItem extends Component {
   state = {};
   render() {
-    return <h1>This is user item</h1>;
+    const { user: u } = this.props;
+    return (
+      <div className="card m-2">
+        <div className="card-body">
+          <h5 className="card-title">{u.name}</h5>
+          <p className="card-text">{u.age}</p>
+          <p className="card-text">{u.email}</p>
+          <p className="card-text">{u.password}</p>
+        </div>
+        <div className="card-footer">
+          <button className="btn btn-success">Redaguoti</button>
+          <button className="btn btn-danger">Ištrinti</button>
+        </div>
+      </div>
+    );
   }
 }
 
