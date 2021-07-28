@@ -7,13 +7,26 @@ class MyForm extends Component {
     email: '',
     password: '',
   };
+
+  handleSubmitLocal = (e) => {
+    e.preventDefault();
+    console.log('stoppp');
+  };
+
+  handleInput = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   render() {
+    const { state: s } = this;
     return (
       <div className="w-50">
         <h2>Sukurkite naują vartotoją</h2>
-        <form>
+        <form onSubmit={this.handleSubmitLocal} autoComplete="off">
           <div className="form-group">
             <input
+              value={s.name}
+              onChange={this.handleInput}
               type="text"
               className="form-control"
               name="name"
@@ -22,6 +35,8 @@ class MyForm extends Component {
           </div>
           <div className="form-group">
             <input
+              value={s.age}
+              onChange={this.handleInput}
               type="number"
               className="form-control"
               name="age"
@@ -30,6 +45,8 @@ class MyForm extends Component {
           </div>
           <div className="form-group">
             <input
+              value={s.email}
+              onChange={this.handleInput}
               type="text"
               className="form-control"
               name="email"
@@ -38,6 +55,8 @@ class MyForm extends Component {
           </div>
           <div className="form-group">
             <input
+              value={s.password}
+              onChange={this.handleInput}
               type="text"
               className="form-control"
               name="password"
