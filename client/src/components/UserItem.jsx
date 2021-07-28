@@ -28,7 +28,7 @@ class UserItem extends Component {
                 <p className="card-text">El. paštas: {u.email}</p>
                 <p className="card-text">Slaptažodis: {u.password}</p>
               </div>
-              <div className="card-footer">
+              <div className="card-footer d-flex justify-content-between">
                 <button onClick={this.handleEdit} className="btn btn-success">
                   Redaguoti
                 </button>
