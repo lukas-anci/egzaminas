@@ -9,7 +9,7 @@ class MyForm extends Component {
   };
 
   componentDidMount() {
-    this.props.place && this.propsToState();
+    this.props.user && this.propsToState();
   }
 
   propsToState() {

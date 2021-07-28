@@ -3,6 +3,8 @@ import UserItem from './UserItem';
 class UserList extends Component {
   state = {};
   render() {
+    if (!this.props.users.length)
+      return <h2>No users yet, please create one </h2>;
     return (
       <div className="d-flex flex-wrap">
         {this.props.users.map((u) => (
